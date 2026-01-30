@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class reverse {
+public class reverseoddnumber {
     public static void main (String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -22,5 +22,6 @@ public class reverse {
     }
     
 }
+
 
 
