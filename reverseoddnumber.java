@@ -1,24 +1,26 @@
-
-import java.util.ArrayList;
 import java.util.Scanner;
-
-public class reverseoddnumber {
-    public static void main(String[] args) {
+public class reverse {
+    public static void main (String[] args){
         Scanner sc=new Scanner(System.in);
-        List<Integer> l=new ArrayList<>();
-        while (true) {
-            int n=sc.nextInt();            
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int u=0;u<n;u++){
+            arr[u]=sc.nextInt();
         }
-        int s=n.length();
-        for(int u=s;u>0;u--){
-            if(u%2==1){
-                l.put(n[u]);
-            }
+        int l=1;
+        int r=(n%2==0)?n-1:n-2;
+        while(l<r){
+            int t=arr[l];
+            arr[l]=arr[r];
+            arr[r]=t;
+            l+=2;
+            r-=2;
+        }
+        for(int u=0;u<n;u++){
+            System.out.print(arr[u]);
+        }
+    }
+    
+}
 
-        }
-        for(int u=0;u<s;u++){
-            System.out.print(l[u])
-        }
-    }
-    }
 
