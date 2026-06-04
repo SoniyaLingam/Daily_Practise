@@ -1,7 +1,7 @@
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
 import java.util.*;
-class kth_largest{
+class left_rotate{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -10,15 +10,12 @@ class kth_largest{
             arr[u]=sc.nextInt();
         }
         int k=sc.nextInt();
-        for(int u=0;u<k;u++){
-            for(int j=u+1;j<n;j++){
-                if(arr[u]>arr[j]){
-                    int temp=arr[u];
-                    arr[u]=arr[j];
-                    arr[j]=temp;
-                }
-            }
+        int[]res=new int[n];
+        for(int u=0;u<n;u++){
+            res[u]=arr[(u+k)%n];
         }
-        System.out.print(arr[k-1]);
+        for(int j=0;j<n;j++){
+            System.out.print(res[j]+" ");
+        }
     }
 }
