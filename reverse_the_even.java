@@ -1,24 +1,31 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
-import java.util.*;
-class reverse_the_even{
+
+import java.util.Scanner;
+
+public class reverse_the_even{
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        String[]s=sc.nextLine().split(" ");
-        int n=s.length;
-        String[]so=new String[n];
-        int k=0;
-        for(int u=n-1;u>=0;u--){
-            so[k]=s[u];
-            k++;
-        }
-        for(int u=0;u<n;u++){
-            if(u%2!=0){
-                String a=so[u];
-                so[u] = new StringBuilder(so[u]).reverse().toString();
+        Scanner sc = new Scanner(System.in);
+
+        String input = sc.nextLine();
+        StringBuilder a = new StringBuilder();
+
+        // Traverse the input in reverse and keep only even digits
+        for (int i = input.length() - 1; i >= 0; i--) {
+            char b = input.charAt(i);
+
+            if ("02468".indexOf(b) != -1) {
+                a.append(b);
             }
-            System.out.print(so[u]+" ");
         }
-        
+
+        // Remove leading zeros
+        String result = a.toString().replaceFirst("^0+", "");
+
+        if (a.length() == 0) {
+            System.out.println(-1);
+        } else {
+            System.out.println(result.isEmpty() ? "0" : result);
+        }
+
+        sc.close();
     }
 }
